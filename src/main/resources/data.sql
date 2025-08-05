@@ -1,0 +1,60 @@
+-- Clear existing data to ensure a clean slate on every run
+DELETE FROM items;
+
+-- Insert 50 sample data records for the application to process
+INSERT INTO items (name, price, quantity, type) VALUES
+-- Raw Items (17)
+('Organic Wheat', 55.00, 100, 'RAW'),
+('Raw Cotton Bale', 300.00, 50, 'RAW'),
+('Coffee Beans', 250.50, 80, 'RAW'),
+('Unprocessed Timber', 750.00, 20, 'RAW'),
+('Crude Oil Barrel', 6500.00, 15, 'RAW'),
+('Iron Ore', 1200.00, 200, 'RAW'),
+('Raw Sugar Cane', 35.00, 500, 'RAW'),
+('Fresh Potatoes', 40.00, 300, 'RAW'),
+('Raw Silk Cocoon', 950.00, 100, 'RAW'),
+('Natural Rubber', 180.00, 250, 'RAW'),
+('Uncut Diamonds', 50000.00, 10, 'RAW'),
+('Limestone Block', 450.00, 60, 'RAW'),
+('Raw Wool', 220.00, 150, 'RAW'),
+('Corn Cobs', 25.00, 1000, 'RAW'),
+('Fresh Salmon', 800.00, 40, 'RAW'),
+('Quarry Stones', 150.00, 300, 'RAW'),
+('Raw Tobacco Leaves', 400.00, 90, 'RAW'),
+
+-- Manufactured Items (17)
+('Handcrafted Chair', 4500.00, 12, 'MANUFACTURED'),
+('Smartphone', 45000.00, 25, 'MANUFACTURED'),
+('Leather Wallet', 1500.00, 40, 'MANUFACTURED'),
+('Gaming Laptop', 95000.00, 8, 'MANUFACTURED'),
+('Cotton T-Shirt', 799.00, 150, 'MANUFACTURED'),
+('Steel Beams', 3500.00, 100, 'MANUFACTURED'),
+('Running Shoes', 3200.00, 60, 'MANUFACTURED'),
+('Ceramic Mug', 299.00, 200, 'MANUFACTURED'),
+('LED Television', 38000.00, 18, 'MANUFACTURED'),
+('Wooden Dining Table', 22000.00, 10, 'MANUFACTURED'),
+('Car Tires', 4800.00, 80, 'MANUFACTURED'),
+('Packaged Flour', 120.00, 500, 'MANUFACTURED'),
+('Denim Jeans', 2500.00, 75, 'MANUFACTURED'),
+('Wrist Watch', 5500.00, 30, 'MANUFACTURED'),
+('Electric Kettle', 1800.00, 45, 'MANUFACTURED'),
+('Backpack', 1250.00, 65, 'MANUFACTURED'),
+('Guitar', 8500.00, 15, 'MANUFACTURED'),
+
+-- Imported Items (16)
+('Imported Perfume', 8200.00, 22, 'IMPORTED'),
+('Belgian Chocolates', 95.75, 120, 'IMPORTED'),
+('Swiss Watch', 150.00, 35, 'IMPORTED'),
+('Italian Handbag', 12500.00, 15, 'IMPORTED'),
+('Japanese Matcha Tea', 1800.00, 50, 'IMPORTED'),
+('French Wine', 3500.00, 30, 'IMPORTED'),
+('Scottish Whiskey', 4800.00, 25, 'IMPORTED'),
+('Korean Skincare Set', 2800.00, 40, 'IMPORTED'),
+('Spanish Olives', 450.00, 80, 'IMPORTED'),
+('German Fountain Pen', 6000.00, 18, 'IMPORTED'),
+('Turkish Rug', 18000.00, 5, 'IMPORTED'),
+('Cuban Cigars', 9500.00, 10, 'IMPORTED'),
+('Canadian Maple Syrup', 850.00, 60, 'IMPORTED'),
+('Egyptian Cotton Sheets', 4200.00, 28, 'IMPORTED'),
+('Persian Saffron', 1500.00, 100, 'IMPORTED'),
+('Dutch Cheese', 99.00, 90, 'IMPORTED');
