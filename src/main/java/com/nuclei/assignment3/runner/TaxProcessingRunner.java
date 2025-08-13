@@ -1,5 +1,6 @@
 package com.nuclei.assignment3.runner;
 
+import com.nuclei.assignment3.constants.AppConstants;
 import com.nuclei.assignment3.dto.ItemDTO;
 import com.nuclei.assignment3.service.TaxProcessingService;
 import java.util.List;
@@ -17,7 +18,7 @@ public class TaxProcessingRunner implements CommandLineRunner {
 
   @Override
   public void run(final String... args) {
-    log.info("========== Starting Item Tax Processing Job ==========");
+    log.info(AppConstants.LogConstants.JOB_START);
     try {
       final long startTime = System.currentTimeMillis();
       final List<ItemDTO> results = taxProcessingService.processAndCalculateTaxes();
@@ -25,24 +26,23 @@ public class TaxProcessingRunner implements CommandLineRunner {
 
       printResults(results, duration);
     } catch (Exception e) {
-      log.error("A critical error occurred during the tax processing job.", e);
+      log.error(AppConstants.LogConstants.JOB_ERROR, e);
     }
-    log.info("========== Item Tax Processing Job Finished ==========");
+    log.info(AppConstants.LogConstants.JOB_END);
   }
 
   private void printResults(final List<ItemDTO> results, final long duration) {
     final StringBuilder report = new StringBuilder();
 
-    // Chain the .append() calls to satisfy static analysis and improve style
-    report.append("\n----------------------- TAX CALCULATION RESULTS -----------------------")
-        .append("\n+----------------------+-----------------------------------------------+");
+    report.append(AppConstants.LogConstants.REPORT_HEADER)
+        .append(AppConstants.LogConstants.REPORT_TABLE_BORDER);
 
     results.forEach(item -> report.append("\n").append(item.toString()));
 
-    report.append("\n+----------------------------------------------------------------------+")
-        .append(String.format("\nSuccessfully processed %d items in %d milliseconds.",
+    report.append(AppConstants.LogConstants.REPORT_FOOTER_BORDER)
+        .append(String.format(AppConstants.LogConstants.REPORT_SUMMARY_FORMAT,
             results.size(), duration))
-        .append("\n-------------------------------------------------------------------");
+        .append(AppConstants.LogConstants.REPORT_SUMMARY_LINE);
 
     log.info(report.toString());
   }

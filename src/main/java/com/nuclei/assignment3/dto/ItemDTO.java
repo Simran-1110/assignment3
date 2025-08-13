@@ -11,9 +11,6 @@ public class ItemDTO {
   private double salesTax;
   private double finalPrice;
 
-  /**
-   * Provides a clean, formatted string for console output.
-   */
   @Override
   public String toString() {
     return String.format(
