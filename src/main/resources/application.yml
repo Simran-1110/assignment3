@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tax_calculator
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: INFO
+    com.nuclei.assignment3: DEBUG
+
+server:
+  port: 8080
